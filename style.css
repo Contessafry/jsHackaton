@@ -13,6 +13,9 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+input {
+  width: 120px;
+}
 div {
   display: flex;
   flex-direction: column;
@@ -67,6 +70,7 @@ div {
 .classeAggiunta {
   color: blueviolet;
 }
+/*evidenzia elementi*/
 #evidenzia {
   list-style-type: none;
   font-size: large;
@@ -74,4 +78,39 @@ div {
 #evidenzia :hover {
   color: black;
   background-color: rgb(208, 255, 0);
+}
+
+#menu {
+  border-radius: 10%;
+  padding: 7px;
+  width: 75px;
+  position: relative;
+  right: -17px;
+  list-style-type: none;
+  background: #567676;
+  flex-direction: column;
+}
+/*18. Animazione di un div*/
+#treno {
+  background-color: rgb(241, 53, 15);
+  transition: transform 2s ease;
+}
+
+#treno:hover {
+  transform: translate(-100pc, 0px);
+}
+
+#slideDiv {
+  display: flex;
+  flex-direction: row;
+}
+#slider {
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: row;
+}
+.slide {
+  height: 112px;
+  width: 112px;
 }

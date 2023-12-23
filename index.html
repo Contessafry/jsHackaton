@@ -58,13 +58,62 @@
         padding: 10px;
       "
     >
-      <input id="todoInput" type="text" style="width: 120px" /><button
-        id="todoBtn"
-      >
-        ADD
-      </button>
+      <input id="todoInput" type="text" /><button id="todoBtn">ADD</button>
       <ul id="todolist"></ul>
     </div>
+    <!--14. Contatore di click su un bottone:-->
+    <div style="background-color: royalblue">
+      <button id="CounterBtn">Click Counter</button>
+      <span id="CounterValue">0</span>
+    </div>
+    <!--15. Cambia colore di sfondo al mouseout:-->
+    <div id="outDiv" style="background-color: yellow"></div>
+    <!--16. Modifica immagine al passaggio del mouse su un'altra-->
+    <div style="background-color: violet">
+      <img id="cambioImg" src="doge96.png" alt="" />
+    </div>
+    <!--17. Menu a tendina-->
+    <div style="background-color: aqua">
+      <button id="menuBtn">tendina v</button>
+      <ul id="menu" style="display: none">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <!--18. Animazione di un div-->
+    <div id="treno">Treno in partenza dal binario 1</div>
+    <!--19. Cambia testo con input:-->
+    <div style="background-color: rosybrown">
+      <input id="tchange" type="text" /><button id="xx">xx</button
+      ><span id="val">--</span>
+    </div>
+    <!--20. Controllo visibilità con checkbox: -->
+    <div id="checkDiv" style="background-color: antiquewhite">
+      <input type="checkbox" name="" id="check" />
+      <span id="checkSpan" style="background-color: seagreen">esisto</span>
+    </div>
+    <!--21. Cambia stile con cambio testo input-->
+    <div id="colorDiv" style="background-color: aliceblue">
+      <input
+        id="colorInput"
+        type="text"
+        placeholder="cambia colore sfondo"
+      /><button id="colorBtn">change</button>
+    </div>
+    <!--22. Carosello di immagini:-->
+    <div id="slideDiv" style="background-color: teal">
+      <button id="prevBtn">pre</button>
+      <div id="slider">
+        <img class="slide" src="doge96.png" alt="" />
+        <img class="slide" src="poop.png" alt="" />
+        <img class="slide" src="bmo.png" alt="" />
+        <img class="slide" src="morp.png" alt="" />
+        <img class="slide" src="star.png" alt="" />
+      </div>
+      <button id="nextBtn">next</button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

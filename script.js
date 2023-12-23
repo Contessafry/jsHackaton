@@ -98,3 +98,128 @@ function todolistAdd() {
   document.getElementById("todolist").innerHTML += "<li>" + todoInput + "</li>";
 }
 todoBtn.addEventListener("click", todolistAdd);
+
+let CounterBtn = document.getElementById("CounterBtn");
+let CounterValue = document.getElementById("CounterValue");
+//-14. Contatore di click su un bottone:
+function Counter() {
+  CounterValue.innerHTML++;
+}
+
+CounterBtn.addEventListener("click", Counter);
+//15. Cambia colore di sfondo al mouseout:
+let outDiv = document.getElementById("outDiv");
+
+function changeColorOut() {
+  outDiv.style.backgroundColor = "blueviolet";
+}
+
+outDiv.addEventListener("mouseout", changeColorOut);
+
+//16. Modifica immagine al passaggio del mouse su un'altra
+let cambioImg = document.getElementById("cambioImg");
+let x = 0;
+function changeImg() {
+  if (x == 0) {
+    x = 1;
+    cambioImg.src = "doge96.png";
+  } else {
+    x = 0;
+    cambioImg.src = "poop.png";
+  }
+}
+
+cambioImg.addEventListener("mouseover", changeImg);
+//17. Menu a tendina
+
+let menuBtn = document.getElementById("menuBtn");
+let menu = document.getElementById("menu");
+
+function menuToggle() {
+  if (menu.style.display == "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+}
+
+menuBtn.addEventListener("mouseover", menuToggle);
+//19. Cambia testo con input:
+
+let xx = document.getElementById("xx");
+
+function valTextChange() {
+  let tchange = document.getElementById("tchange").value;
+
+  document.getElementById("val").innerHTML = tchange;
+}
+
+xx.addEventListener("click", valTextChange);
+
+//20.Controllo visibilità con checkbox:
+let checkDiv = document.getElementById("checkDiv");
+let check = document.getElementById("check");
+let checkSpan = document.getElementById("checkSpan");
+function checkVisibility() {
+  if (checkSpan.style.display == "none") {
+    check.checked = false;
+  } else {
+    check.checked = true;
+  }
+}
+function hideCheckSpan() {
+  if (checkSpan.style.display == "flex") {
+    checkSpan.style.display = "none";
+  } else {
+    checkSpan.style.display = "flex";
+  }
+  checkVisibility();
+}
+checkVisibility();
+checkDiv.addEventListener("click", hideCheckSpan);
+//Cambia stile con cambio testo input:
+let colorDiv = document.getElementById("colorDiv");
+let colorBtn = document.getElementById("colorBtn");
+
+function changeColorInput() {
+  colorDiv.style.background = document.getElementById("colorInput").value;
+}
+colorBtn.addEventListener("click", changeColorInput);
+//22. Carosello di immagini:
+let slides = document.getElementsByClassName("slide");
+let prevBtn = document.getElementById("prevBtn");
+let nextBtn = document.getElementById("nextBtn");
+let molt = 0;
+function changeSlidepre() {
+  if (molt < 2) {
+    molt++;
+    let indexS = 110 * molt + "px";
+
+    let translate = "translate(" + indexS + ", 0px)";
+
+    for (let i = 0; i < slides.length; i++) {
+      // Applichiamo la trasformazione a ciascun elemento "slide"
+      slides[i].style.transform = translate;
+    }
+  }
+  console.log(molt);
+}
+
+// Aggiungiamo un listener per l'evento click al pulsante "nextBtn"
+prevBtn.addEventListener("click", changeSlidepre);
+
+function changeSlidenext() {
+  if (molt > -2) {
+    molt--;
+    let indexS = 110 * molt + "px";
+
+    let translate = "translate(" + indexS + ", 0px)";
+
+    for (let i = 0; i < slides.length; i++) {
+      // Applichiamo la trasformazione a ciascun elemento "slide"
+      slides[i].style.transform = translate;
+    }
+  }
+  console.log(molt);
+}
+nextBtn.addEventListener("click", changeSlidenext);
