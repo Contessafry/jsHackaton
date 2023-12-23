@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cambioColore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  height: 150px;
+  width: 150px;
+  color: white;
+}
+#daInserire {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #8a2be2;
+  height: 150px;
+  width: 150px;
+  color: rgb(253, 253, 253);
+}
+#removeDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(155, 16, 35);
+  height: 150px;
+  width: 150px;
+  color: white;
+}
+#hideDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(44, 135, 34);
+  height: 150px;
+  width: 150px;
+  color: white;
+}
