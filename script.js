@@ -55,3 +55,46 @@ function nascondi() {
 hideBtn.addEventListener("click", nascondi);
 //8. Cambia dimensione di un'immagine al clic
 
+let poop = document.getElementById("poop");
+
+function cambiaimg() {
+  if (poop.style.width == "46px") {
+    poop.style.width = "80px";
+    poop.style.height = "80px";
+  } else {
+    poop.style.width = "46px";
+    poop.style.height = "46px";
+  }
+}
+poop.addEventListener("mouseover", cambiaimg);
+
+let testo = document.getElementById("testo");
+
+function textColor() {
+  testo.style.color = "purple";
+}
+
+testo.addEventListener("click", textColor);
+
+//10. Al click allert
+let allertBtn = document.getElementById("alertBtn");
+
+function allert() {
+  alert("ATTENZIONE HAI SCARICATO 15 TROYAN!!!");
+}
+
+allertBtn.addEventListener("click", allert);
+//11. Aggiungi classe CSS con evento:Aggiungi una classe CSS a un elemento in risposta a un evento, come un clic.
+let addClasse = document.getElementById("aggiungiClasse");
+function addNewClass() {
+  addClasse.classList.add("classeAggiunta");
+}
+addClasse.addEventListener("click", addNewClass);
+//13.todolist
+
+let todoBtn = document.getElementById("todoBtn");
+function todolistAdd() {
+  let todoInput = document.getElementById("todoInput").value;
+  document.getElementById("todolist").innerHTML += "<li>" + todoInput + "</li>";
+}
+todoBtn.addEventListener("click", todolistAdd);

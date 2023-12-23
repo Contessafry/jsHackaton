@@ -13,7 +13,7 @@
     <!-- Inserisci testo in un div:**
     Usa JavaScript per aggiungere del testo all'interno di un div esistente.-->
 
-    <div id="cambiaTesto">Hello World!</div>
+    <div id="cambiaTesto" style="background-color: seagreen">Hello World!</div>
 
     <!--3. Aggiungi un elemento HTML:**
     Inserisci un nuovo elemento HTML (come un paragrafo o un'immagine) in una posizione specifica del DOM. -->
@@ -25,10 +25,46 @@
       <button id="hideBtn">Nacondi</button>
       <span id="hideText" style="display: flex">AAAAAAAAAAH</span>
     </div>
-<!--8. Cambia dimensione di un'immagine al clic-->
-    <div id="changeImg">
-      <img src="img/pic.jpg" />
-    </div>  
+    <!--8. Cambia dimensione di un'immagine al clic-->
+    <div style="background: silver">
+      <img id="poop" src="poop.png" style="width: 46px; height: 46px" />
+    </div>
+    <!--**9. Cambia colore del testo al clic:**-->
+    <div style="background-color: aqua">
+      <span id="testo" style="font-size: x-large"> CIAOOOOOO </span>
+    </div>
+    <!--**10. Al click allert-->
+    <div style="background-color: crimson">
+      <button id="alertBtn">toccamii</button>
+    </div>
+    <!--**11. aggiungi classe-->
+    <div style="background-color: tomato">
+      <p id="aggiungiClasse">Aggiungi una classe CSS</p>
+    </div>
+    <!--**12. Evidenzia elemento al passaggio del mouse:**-->
+    <div style="background-color: springgreen">
+      <ul id="evidenzia">
+        <li>coso1</li>
+        <li>coso2</li>
+        <li>coso3</li>
+        <li>coso4</li>
+      </ul>
+    </div>
+    <!--**13.todolist-->
+    <div
+      style="
+        justify-content: flex-start;
+        background-color: sandybrown;
+        padding: 10px;
+      "
+    >
+      <input id="todoInput" type="text" style="width: 120px" /><button
+        id="todoBtn"
+      >
+        ADD
+      </button>
+      <ul id="todolist"></ul>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -4,11 +4,23 @@
   box-sizing: border-box;
 }
 body {
+  height: 100vh;
+  background-color: cadetblue;
   gap: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  color: white;
 }
 
 #cambioColore {
@@ -51,4 +63,15 @@ body {
   height: 150px;
   width: 150px;
   color: white;
+}
+.classeAggiunta {
+  color: blueviolet;
+}
+#evidenzia {
+  list-style-type: none;
+  font-size: large;
+}
+#evidenzia :hover {
+  color: black;
+  background-color: rgb(208, 255, 0);
 }
