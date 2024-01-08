@@ -99,7 +99,7 @@ div {
 #treno:hover {
   transform: translate(-100pc, 0px);
 }
-
+/* Carosello di immagini: */
 #slideDiv {
   display: flex;
   flex-direction: row;
@@ -111,6 +111,58 @@ div {
   flex-direction: row;
 }
 .slide {
+  position: relative;
+  left: 217px;
   height: 112px;
   width: 112px;
+}
+/* Effetto dissolvenza al clic*/
+#fadeDiv {
+  transition: opacity 1.5s ease-in-out 0s;
+  opacity: 1;
+}
+/*Tooltip personalizzati*/
+#tooltipholder {
+  position: relative;
+}
+#tooltip {
+  right: -82px;
+  bottom: -27px;
+  position: absolute;
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#tooltipholder:hover #tooltip {
+  visibility: visible;
+}
+/*drag and drop */
+#pallina {
+  bottom: 10px;
+  left: 25px;
+  position: absolute;
+  border-radius: 100%;
+  background-color: orangered;
+  height: 20px;
+  width: 20px;
+  cursor: -webkit-grab;
+}
+#canestro {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  border-radius: 100%;
+  border: 3px solid red;
+  height: 45px;
+  width: 35px;
+}
+/*32. Animazione colore e dimensione:*/
+
+#pilastro {
+  background-color: green;
+  height: 20px;
+  width: 20px;
 }

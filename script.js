@@ -191,7 +191,7 @@ let prevBtn = document.getElementById("prevBtn");
 let nextBtn = document.getElementById("nextBtn");
 let molt = 0;
 function changeSlidepre() {
-  if (molt < 2) {
+  if (molt < 0) {
     molt++;
     let indexS = 110 * molt + "px";
 
@@ -201,6 +201,8 @@ function changeSlidepre() {
       // Applichiamo la trasformazione a ciascun elemento "slide"
       slides[i].style.transform = translate;
     }
+  } else {
+    molt = -slides.length;
   }
   console.log(molt);
 }
@@ -209,7 +211,7 @@ function changeSlidepre() {
 prevBtn.addEventListener("click", changeSlidepre);
 
 function changeSlidenext() {
-  if (molt > -2) {
+  if (molt > -slides.length + 1) {
     molt--;
     let indexS = 110 * molt + "px";
 
@@ -219,7 +221,168 @@ function changeSlidenext() {
       // Applichiamo la trasformazione a ciascun elemento "slide"
       slides[i].style.transform = translate;
     }
+  } else {
+    molt = 1;
   }
   console.log(molt);
 }
 nextBtn.addEventListener("click", changeSlidenext);
+// Effetto dissolvenza al clic
+let fadeDiv = document.getElementById("fadeDiv");
+function fade() {
+  fadeDiv.style.transition = "opacity 1.5s ease-in-out";
+  fadeDiv.style.opacity = fadeDiv.style.opacity === "1" ? "0.0" : "1";
+}
+fadeDiv.addEventListener("click", fade);
+
+// Timer semplice
+let timeSpan = document.getElementById("timeSpan");
+let startT = document.getElementById("startT");
+let stopT = document.getElementById("stopT");
+
+function startTimer() {
+  let second = 0;
+  timeSpan.innerHTML = second;
+
+  function secondUp() {
+    second++;
+    timeSpan.innerHTML = second;
+  }
+  interval = setInterval(secondUp, 1000);
+  return interval;
+}
+
+startT.addEventListener("click", startTimer);
+
+function stopTimer() {
+  clearInterval(interval);
+}
+
+stopT.addEventListener("click", stopTimer);
+
+// Visualizza coordinate del mouse
+let coordinDiv = document.getElementById("coordinDiv");
+let xyElement = document.getElementById("coordinateSpan");
+
+function coordinatePointer(e) {
+  let cooX = e.clientX;
+  let cooY = e.clientY;
+  xyElement.innerHTML =
+    "coordinate:" + "<br>" + "X: " + cooX + "<br>" + " Y: " + cooY;
+}
+coordinDiv.addEventListener("mousemove", coordinatePointer);
+// Cambia immagine di sfondo
+let divBG = document.getElementById("divBG");
+let selectBG = document.getElementById("selectBG");
+
+function bgOption() {
+  divBG.style.background = selectBG.value;
+}
+
+selectBG.addEventListener("change", bgOption);
+//27. Barra di progresso con bottone:
+let progressBar = document.getElementById("progressBar");
+let plusBtn = document.getElementById("plusBtn");
+let valueProgress = parseInt(plusBtn.value);
+function barProgress() {
+  if (valueProgress < 100) {
+    valueProgress += 10;
+    progressBar.style.width = valueProgress + "%";
+    progressBar.innerHTML = valueProgress + "%";
+  }
+}
+
+plusBtn.addEventListener("click", barProgress);
+// drag and drop
+let pallina = document.getElementById("pallina");
+let canestro = document.getElementById("canestro");
+let dragItem = 0;
+function dragStart() {
+  console.log("dragStart");
+  setTimeout(() => {
+    this.style.display = "none";
+  }, 0);
+  dragItem = this;
+}
+function dragEnd() {
+  console.log("dragEnd");
+  this.style.display = "block";
+  this.style.left = "5px";
+}
+
+pallina.addEventListener("dragstart", dragStart);
+pallina.addEventListener("dragend", dragEnd);
+
+function dragOver(e) {
+  e.preventDefault();
+  console.log("dragOver");
+}
+
+function dragEnter() {
+  console.log("dragEnter");
+}
+
+function dragLeave() {
+  console.log("dragLeave");
+}
+function dragDrop() {
+  console.log("dragDrop");
+  this.append(dragItem);
+}
+canestro.addEventListener("dragover", dragOver);
+canestro.addEventListener("dragenter", dragEnter);
+canestro.addEventListener("dragleave", dragLeave);
+canestro.addEventListener("drop", dragDrop);
+// 31. Genera numero casuale
+let randomBtn = document.getElementById("randomBtn");
+let randomNum = document.getElementById("randomNum");
+
+function randomNumber() {
+  randomNum.innerHTML = Math.floor(Math.random() * 10000);
+}
+randomBtn.addEventListener("click", randomNumber);
+
+// 32. Animazione colore e dimensione:
+let pilastro = document.getElementById("pilastro");
+
+function dimensionePil() {
+  pilastro.style.transition =
+    "height 1.5s ease-in-out, background-color 1.5s ease-in-out";
+  pilastro.style.backgroundColor = "blueviolet";
+  pilastro.style.height = "150px";
+}
+
+pilastro.addEventListener("mouseover", dimensionePil);
+pilastro.addEventListener(
+  "mouseout",
+  () => ((pilastro.style = "none"), (pilastro.style.transition = "2s"))
+);
+//33. Orologio digitale:
+
+let showHour = document.getElementById("showHour");
+function zeroPrima(num) {
+  let zeroparsato = num < 10 ? "0" + num : num;
+  return zeroparsato;
+}
+setInterval(() => {
+  let orologio = new Date();
+  showHour.innerHTML =
+    zeroPrima(orologio.getHours()) +
+    ":" +
+    zeroPrima(orologio.getMinutes()) +
+    ":" +
+    zeroPrima(orologio.getSeconds());
+}, 1000);
+// Ridimensiona immagine con slider
+let slider = document.getElementById("slider");
+let resizeImg = document.getElementById("resizeImg");
+
+function resize() {
+  let slider = document.getElementById("slider");
+  let sliderVal = slider.value / 100;
+  resizeImg.style.width = sliderVal + "px";
+  resizeImg.style.height = sliderVal + "px";
+  console.log(slider.value);
+}
+
+slider.addEventListener("click", resize);

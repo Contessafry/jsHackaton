@@ -113,7 +113,85 @@
       </div>
       <button id="nextBtn">next</button>
     </div>
-
+    <!--23. Effetto dissolvenza al clic:-->
+    <div
+      id="fadeDiv"
+      style="
+        background-color: purple;
+        transition: opacity 1.5s ease-in-out 0s;
+        opacity: 1;
+      "
+    >
+      PUFF!
+    </div>
+    <!--24. Timer semplice-->
+    <div style="background-color: yellowgreen">
+      <span id="timeSpan">0</span> <button id="stopT">STOP</button
+      ><button id="startT">START</button>
+    </div>
+    <!--25. Visualizza coordinate del mouse-->
+    <div id="coordinDiv" style="background-color: thistle">
+      <span id="coordinateSpan">coordinate : x 0, y 0</span>
+    </div>
+    <!--26. Cambia immagine di sfondo-->
+    <div id="divBG" style="background-color: tomato">
+      <select name="" id="selectBG">
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+      </select>
+    </div>
+    <!--27. Barra di progresso con bottone:-->
+    <div id="progressDiv" style="background-color: rgb(95, 117, 99)">
+      <div
+        id="progressBar"
+        style="height: 2vh; width: 100%; background-color: rgb(4, 178, 27)"
+      >
+        0%
+      </div>
+      <button id="plusBtn" value="0">+++</button>
+    </div>
+    <!--28. Form con validazione dati:-->
+    <div style="background-color: violet">
+      <form action="" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <button type="submit">Invia</button>
+      </form>
+    </div>
+    <!--29.Tooltip personalizzati:-->
+    <div style="background-color: teal">
+      <a id="tooltipholder" href="a"
+        >Tooltips<span id="tooltip">sono un tooltip</span></a
+      >
+    </div>
+    <!--30. Drag and drop:-->
+    <div style="background-color: green; position: relative">
+      <div id="pallina" draggable="true"></div>
+      <div id="canestro"></div>
+      <!--31. Genera numero casuale-->
+    </div>
+    <div style="background-color: burlywood">
+      <button id="randomBtn">genera</button>
+      <span id="randomNum">0</span>
+    </div>
+    <!--32. Animazione colore e dimensione: -->
+    <div style="background-color: brown">
+      <div id="pilastro"></div>
+    </div>
+    <!--33. Orologio digitale:-->
+    <div style="background-color: thistle">
+      <span id="showHour"></span>
+    </div>
+    <!--Ridimensiona immagine con slider-->
+    <div id="sliderDiv" style="background-color: snow">
+      <img id="resizeImg" src="bmo.png" style="height: 50px; width: 50px" />
+      <input type="range" name="" id="slider" min="0" max="100" value="50" />
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
